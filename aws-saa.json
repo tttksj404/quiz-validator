@@ -1,0 +1,97 @@
+{
+  "domain_id": "aws-saa",
+  "display_name": "AWS Solutions Architect Associate (SAA-C03)",
+  "version": "1.0.0",
+  "anchor_path": "anchor_aws_saa.json",
+  "banned_stem_patterns": [
+    "\\bwhich of the following best\\b",
+    "\\bwhich of the following options is the most\\b",
+    "\\ball of the following are true except\\b",
+    "\\bin the context of cloud architecture\\b"
+  ],
+  "banned_words": {
+    "leverage": "use/apply",
+    "leverages": "uses",
+    "leveraging": "using",
+    "robust": "use specific numbers (99.95% SLA)",
+    "seamless": "remove (meaningless)",
+    "seamlessly": "remove",
+    "synergy": "remove",
+    "synergies": "remove",
+    "holistic": "complete/end-to-end",
+    "paradigm": "approach",
+    "delve into": "examine/cover",
+    "navigate the complexities": "handle the complexity",
+    "it's not just": "remove (AI compulsive structure)",
+    "in essence": "remove",
+    "fundamentally": "remove (overused)"
+  },
+  "stem_starter_regex": [
+    "^An?\\s+\\w+",
+    "^After\\s+",
+    "^During\\s+",
+    "^To\\s+(meet|comply|reduce|optimize|achieve|support)",
+    "^The\\s+\\w+\\s+(team|company|architect|application)"
+  ],
+  "number_patterns": [
+    "\\d+\\s*(TB|GB|MB|KB|PB)",
+    "\\d+\\s*(ms|seconds?|minutes?|hours?|days?)",
+    "\\$\\s*\\d+(?:,\\d{3})*(?:\\.\\d+)?(?:/\\w+)?",
+    "\\d+(\\.\\d+)?\\s*%",
+    "\\d+\\s*(concurrent|requests?|users?|transactions?)",
+    "\\bRTO\\b|\\bRPO\\b",
+    "\\d+\\s*AZ"
+  ],
+  "industry_keywords": {
+    "fintech": ["fintech", "trading", "banking", "payment", "Stripe", "Robinhood", "financial"],
+    "healthcare": ["healthcare", "hospital", "HIPAA", "PHI", "patient", "medical", "EHR"],
+    "media": ["media", "streaming", "video", "broadcast", "Netflix", "content delivery"],
+    "ecommerce": ["e-commerce", "ecommerce", "Black Friday", "shopping cart", "checkout", "retail"],
+    "gaming": ["gaming", "matchmaking", "leaderboard", "multiplayer", "MMO"],
+    "iot": ["IoT", "sensor", "telemetry", "device", "fleet of"],
+    "saas": ["SaaS", "multi-tenant", "B2B"],
+    "adtech": ["ad-tech", "ad tech", "real-time bidding", "RTB", "ad serving"],
+    "genomics": ["genomics", "research", "scientific computing", "HPC"],
+    "logistics": ["logistics", "shipping", "fleet management", "supply chain"]
+  },
+  "confusing_pairs": [
+    ["SQS", "SNS", "EventBridge"],
+    ["Multi-AZ", "Read Replica"],
+    ["ALB", "NLB", "CloudFront"],
+    ["EBS", "EFS", "FSx", "S3"],
+    ["Lambda", "Fargate", "EC2"],
+    ["KMS", "Secrets Manager", "Parameter Store"],
+    ["CloudWatch Logs", "CloudTrail", "AWS Config"],
+    ["Weighted", "Latency", "Geolocation"],
+    ["S3 Standard", "S3 IA", "Glacier", "Glacier Deep Archive"],
+    ["VPC peering", "Transit Gateway", "PrivateLink"]
+  ],
+  "ai_summary_phrases": [
+    "\\bin summary\\b",
+    "\\bin conclusion\\b",
+    "\\bto summarize\\b",
+    "\\bin essence\\b"
+  ],
+  "doc_link_regex": "docs\\.aws\\.amazon\\.com|aws\\.amazon\\.com/\\w+/?",
+  "thresholds": {
+    "option_length_stdev_min": 8,
+    "option_length_spread_min": 20,
+    "em_dash_max": 1,
+    "specific_numbers_min": 2
+  },
+  "hard_rules": [
+    "banned_stem",
+    "banned_words",
+    "stem_starter",
+    "option_length_stdev",
+    "option_length_spread",
+    "em_dash_limit",
+    "explanation_no_ai_ending"
+  ],
+  "soft_rules": [
+    "specific_numbers",
+    "industry_context",
+    "confusing_pair",
+    "explanation_doc_link"
+  ]
+}
