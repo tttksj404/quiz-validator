@@ -10,6 +10,8 @@ Every AI-generated practice exam reads the same way:
 
 Once you see the pattern, you can't unsee it. This validator flags it before the question ships.
 
+For a top-down learning view of how CLI input, JSON schema checks, domain configs, rule evaluation, calibration, and failure handling interact, see [docs/LEARNING_GUIDE.md](docs/LEARNING_GUIDE.md).
+
 ## What it catches
 
 | HARD rules (auto-fail) | SOFT rules (quality score 0-100) |
