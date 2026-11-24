@@ -94,3 +94,7 @@ MIT — use freely. Attribution welcome but not required.
 ## Discussion
 
 Open an issue with `discussion:` prefix for trade-off discussions, new heuristic ideas, or new domain configs you'd like to contribute. PRs that add domains or relax rules across domains welcome.
+
+## 경험 기록
+
+이 프로젝트를 왜 시작했는지, 무엇을 직접 판단했는지, 결과가 어땠는지는 [docs/experience-record.md](docs/experience-record.md)에 정리했습니다.
